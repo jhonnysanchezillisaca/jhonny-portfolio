@@ -37,5 +37,10 @@ export const homePageSchema = {
         title: 'Projects title',
         type: 'string',
       },
+      {
+        name: 'footerTitle',
+        title: 'Footer title',
+        type: 'string',
+      },
     ]
   }

@@ -6,6 +6,8 @@ import Intro from '../components/intro'
 import Layout from '../components/layout'
 import { indexQuery, homeQuery } from '../lib/queries'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
+import Footer from '../components/footer'
+
 
 export default function Index({ allProjects, home, preview }) {
   return (
@@ -17,14 +19,15 @@ export default function Index({ allProjects, home, preview }) {
         <Container>
           <Intro title={home?.title} subtitle={home?.subtitle} mainImage={home?.mainImage}
 />
-          <div className="max-w-5xl mx-auto mb-12">
-            <h3 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
+          <div className="max-w-6xl mb-12">
+            <h3 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
               {home?.section1Title}
             </h3>
             <PostBody content={home?.section1Content} />
           </div>
           {allProjects.length > 0 && <MoreStories title={home?.projectsTitle ?? "Proyectos"} stories={allProjects} />}
         </Container>
+        <Footer title={`${home?.footerTitle ?? "Alba Cirera - Sociòloga"}`} />
       </Layout>
     </>
   )
