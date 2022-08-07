@@ -13,7 +13,7 @@ export default function Index({ allProjects, home, preview }) {
   const contactInfo = { contact: home?.contactLabel, email: home?.contactEmail, resume: home?.resumeLabel }
   return (
     <>
-      <Layout preview={preview}>
+      <Layout footerTitle={home?.footerTitle} contactInfo={contactInfo} preview={preview}>
         <Head>
           <title>{home?.title}</title>
         </Head>
@@ -32,7 +32,6 @@ export default function Index({ allProjects, home, preview }) {
           </Container>
 
         </div>
-        <Footer title={`${home?.footerTitle ?? "Alba Cirera - Sociòloga"}`} {...contactInfo} />
       </Layout>
     </>
   )

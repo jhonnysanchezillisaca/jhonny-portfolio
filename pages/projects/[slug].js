@@ -62,8 +62,6 @@ export default function Project({ data = {}, preview }) {
               />
               <PostBody content={project.content} />
             </article>
-            <SectionSeparator />
-            {moreProjects.length > 0 && <MoreStories title={"More projects"} posts={moreProjects} />}
           </>
         )}
       </Container>
