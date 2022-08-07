@@ -10,7 +10,7 @@ import Footer from '../components/footer'
 
 
 export default function Index({ allProjects, home, preview }) {
-  const contactInfo = {contact: home?.contact, email: home?.email, resume: home?.resume}
+  const contactInfo = {contact: home?.contactLabel, email: home?.contactEmail, resume: home?.resumeLabel}
   return (
     <>
       <Layout preview={preview}>
