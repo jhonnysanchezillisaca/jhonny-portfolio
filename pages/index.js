@@ -10,25 +10,28 @@ import Footer from '../components/footer'
 
 
 export default function Index({ allProjects, home, preview }) {
-  const contactInfo = {contact: home?.contactLabel, email: home?.contactEmail, resume: home?.resumeLabel}
+  const contactInfo = { contact: home?.contactLabel, email: home?.contactEmail, resume: home?.resumeLabel }
   return (
     <>
       <Layout preview={preview}>
         <Head>
           <title>{home?.title}</title>
         </Head>
-        <Container>
-          <Intro title={home?.title} subtitle={home?.subtitle} mainImage={home?.mainImage}
-          {...contactInfo}
-/>
-          <div className="max-w-6xl mb-12">
-            <h3 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
-              {home?.section1Title}
-            </h3>
-            <PostBody content={home?.section1Content} />
-          </div>
-          {allProjects.length > 0 && <MoreStories title={home?.projectsTitle ?? "Proyectos"} stories={allProjects} />}
-        </Container>
+        <div className='max-w-5xl mx-auto'>
+          <Container>
+            <Intro title={home?.title} subtitle={home?.subtitle} mainImage={home?.mainImage}
+              {...contactInfo}
+            />
+            <div className="max-w-6xl mb-12">
+              <h3 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
+                {home?.section1Title}
+              </h3>
+              <PostBody content={home?.section1Content} />
+            </div>
+            {allProjects.length > 0 && <MoreStories title={home?.projectsTitle ?? "Proyectos"} stories={allProjects} />}
+          </Container>
+
+        </div>
         <Footer title={`${home?.footerTitle ?? "Alba Cirera - Sociòloga"}`} {...contactInfo} />
       </Layout>
     </>
