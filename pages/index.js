@@ -6,7 +6,6 @@ import Intro from '../components/intro'
 import Layout from '../components/layout'
 import { indexQuery, homeQuery } from '../lib/queries'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
-import Footer from '../components/footer'
 
 
 export default function Index({ allProjects, home, preview }) {
