@@ -3,11 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { urlForImage } from '../lib/sanity'
 
-export default function CoverImage({ title, slug, image: source }) {
+export default function CoverImage({ title, path, image: source }) {
   const image = source ? (
     <div
       className={cn('shadow-small', {
-        'hover:shadow-medium transition-shadow duration-200': slug,
+        'hover:shadow-medium transition-shadow duration-200': path,
       })}
     >
       <Image
@@ -24,8 +24,8 @@ export default function CoverImage({ title, slug, image: source }) {
 
   return (
     <div className="sm:mx-0">
-      {slug ? (
-        <Link href={`/posts/${slug}`}>
+      {path ? (
+        <Link href={path}>
           <a aria-label={title}>{image}</a>
         </Link>
       ) : (

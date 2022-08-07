@@ -9,18 +9,17 @@ import PostHeader from '../../components/post-header'
 import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
 import PostTitle from '../../components/post-title'
-import { CMS_NAME } from '../../lib/constants'
-import { postQuery, postSlugsQuery } from '../../lib/queries'
+import { projectQuery, projectSlugsQuery } from '../../lib/queries'
 import { urlForImage, usePreviewSubscription } from '../../lib/sanity'
 import { sanityClient, getClient, overlayDrafts } from '../../lib/sanity.server'
 
-export default function Post({ data = {}, preview }) {
+export default function Project({ data = {}, preview }) {
   const router = useRouter()
 
-  const slug = data?.post?.slug
+  const slug = data?.project?.slug
   const {
-    data: { post, morePosts },
-  } = usePreviewSubscription(postQuery, {
+    data: { project, moreProjects },
+  } = usePreviewSubscription(projectQuery, {
     params: { slug },
     initialData: data,
     enabled: preview && slug,
@@ -41,13 +40,13 @@ export default function Post({ data = {}, preview }) {
             <article>
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {project.title} | Alba Cirera
                 </title>
-                {post.coverImage && (
+                {project.coverImage && (
                   <meta
                     key="ogImage"
                     property="og:image"
-                    content={urlForImage(post.coverImage)
+                    content={urlForImage(project.coverImage)
                       .width(1200)
                       .height(627)
                       .fit('crop')
@@ -56,15 +55,15 @@ export default function Post({ data = {}, preview }) {
                 )}
               </Head>
               <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
+                title={project.title}
+                coverImage={project.coverImage}
+                date={project.date}
+                excerpt={project.excerpt}
               />
-              <PostBody content={post.content} />
+              <PostBody content={project.content} />
             </article>
             <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories title={"More stories"} posts={morePosts} />}
+            {moreProjects.length > 0 && <MoreStories title={"More projects"} posts={moreProjects} />}
           </>
         )}
       </Container>
@@ -73,7 +72,7 @@ export default function Post({ data = {}, preview }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const { post, morePosts } = await getClient(preview).fetch(postQuery, {
+  const { project, moreProjects } = await getClient(preview).fetch(projectQuery, {
     slug: params.slug,
   })
 
@@ -81,15 +80,15 @@ export async function getStaticProps({ params, preview = false }) {
     props: {
       preview,
       data: {
-        post,
-        morePosts: overlayDrafts(morePosts),
+        project,
+        moreProjects: overlayDrafts(moreProjects),
       },
     },
   }
 }
 
 export async function getStaticPaths() {
-  const paths = await sanityClient.fetch(postSlugsQuery)
+  const paths = await sanityClient.fetch(projectSlugsQuery)
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
     fallback: true,
