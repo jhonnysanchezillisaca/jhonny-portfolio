@@ -8,7 +8,7 @@ export default function Layout({ preview, children, footerTitle, contactInfo }) 
       <Meta />
       <div className="min-h-screen">
         <Alert preview={preview} />
-        <main>{children}</main>
+        <main className="max-w-5xl mx-auto">{children}</main>
         <Footer title={`${footerTitle ?? "Alba Cirera - Sociòloga"}`} {...contactInfo} />
       </div>
     </>

@@ -17,7 +17,6 @@ export default function Index({ allProjects, home, preview }) {
         <Head>
           <title>{home?.title}</title>
         </Head>
-        <div className='max-w-5xl mx-auto'>
           <Container>
             <Intro title={home?.title} subtitle={home?.subtitle} mainImage={home?.mainImage}
               {...contactInfo}
@@ -31,7 +30,6 @@ export default function Index({ allProjects, home, preview }) {
             {allProjects.length > 0 && <MoreStories title={home?.projectsTitle ?? "Proyectos"} stories={allProjects} />}
           </Container>
 
-        </div>
       </Layout>
     </>
   )

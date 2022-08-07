@@ -10,9 +10,9 @@ export default function PostHeader({ title, coverImage, excerpt }) {
       <div className="mb-8 md:mb-16 sm:mx-0">
         <CoverImage title={title} image={coverImage} />
       </div>
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-2xl">
         <div className="mb-6 text-lg">
-          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+          <p className="text-xl leading-relaxed mb-4">{excerpt}</p>
         </div>
       </div>
     </>

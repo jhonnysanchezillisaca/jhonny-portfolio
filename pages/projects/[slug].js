@@ -60,7 +60,10 @@ export default function Project({ data = {}, preview }) {
                 date={project.date}
                 excerpt={project.excerpt}
               />
+              <div className="my-8 md:my-20">
+
               <PostBody content={project.content} />
+              </div>
             </article>
           </>
         )}
