@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "alba-portfolio"
-  },
   "api": {
     "projectId": "agynph00",
     "dataset": "production"
+  },
+  "project": {
+    "name": "alba-portfolio"
   },
   "plugins": [
     "@sanity/base",
