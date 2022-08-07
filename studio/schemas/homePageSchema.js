@@ -33,6 +33,21 @@ export const homePageSchema = {
         of: [{ type: 'block' }],
       },
       {
+        name: 'contactLabel',
+        title: 'Contact label',
+        type: 'string',
+      },
+      {
+        name: 'contactEmail',
+        title: 'Contact email',
+        type: 'string',
+      },
+      {
+        name: 'resumeLabel',
+        title: 'Resume label',
+        type: 'string',
+      },
+      {
         name: 'projectsTitle',
         title: 'Projects title',
         type: 'string',

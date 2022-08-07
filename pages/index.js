@@ -10,6 +10,7 @@ import Footer from '../components/footer'
 
 
 export default function Index({ allProjects, home, preview }) {
+  const contactInfo = {contact: home?.contact, email: home?.email, resume: home?.resume}
   return (
     <>
       <Layout preview={preview}>
@@ -18,6 +19,7 @@ export default function Index({ allProjects, home, preview }) {
         </Head>
         <Container>
           <Intro title={home?.title} subtitle={home?.subtitle} mainImage={home?.mainImage}
+          {...contactInfo}
 />
           <div className="max-w-6xl mb-12">
             <h3 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
@@ -27,7 +29,7 @@ export default function Index({ allProjects, home, preview }) {
           </div>
           {allProjects.length > 0 && <MoreStories title={home?.projectsTitle ?? "Proyectos"} stories={allProjects} />}
         </Container>
-        <Footer title={`${home?.footerTitle ?? "Alba Cirera - Sociòloga"}`} />
+        <Footer title={`${home?.footerTitle ?? "Alba Cirera - Sociòloga"}`} {...contactInfo} />
       </Layout>
     </>
   )
