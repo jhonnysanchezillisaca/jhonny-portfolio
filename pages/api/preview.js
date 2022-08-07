@@ -1,4 +1,4 @@
-import { postBySlugQuery } from '../../lib/queries'
+import { projectBySlugQuery } from '../../lib/queries'
 import { previewClient } from '../../lib/sanity.server'
 
 export default async function preview(req, res) {
@@ -12,7 +12,7 @@ export default async function preview(req, res) {
   }
 
   // Check if the post with the given `slug` exists
-  const post = await previewClient.fetch(postBySlugQuery, {
+  const post = await previewClient.fetch(projectBySlugQuery, {
     slug: req.query.slug,
   })
 
