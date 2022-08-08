@@ -1,3 +1,3 @@
 - [ ] Extract contact to it's own component on sanity and execute queries where needed
 - [ ] More stories should work inside a project page
-- [ ] 
+- [ ] 404 page
