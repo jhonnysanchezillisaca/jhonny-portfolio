@@ -14,7 +14,7 @@ export default function Index({ allProjects, home, preview }) {
     <>
       <Layout footerTitle={home?.footerTitle} contactInfo={contactInfo} preview={preview}>
         <Head>
-          <title>{home?.title}</title>
+          <title>{home?.title} - Sociòloga</title>
         </Head>
           <Container>
             <Intro title={home?.title} subtitle={home?.subtitle} mainImage={home?.mainImage}

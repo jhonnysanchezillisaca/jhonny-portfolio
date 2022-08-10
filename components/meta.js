@@ -34,7 +34,7 @@ export default function Meta() {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`Alba Cirera - Sociòloga.`}
+        content={`Especialista en polítiques socials i acció comunitària. Cercant la manera de contribuir a la generació de coneixement i d’oferir el que sé al servei de la societat.`}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} key="ogImage" />
     </Head>
