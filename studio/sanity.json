@@ -5,7 +5,7 @@
     "dataset": "production"
   },
   "project": {
-    "name": "alba-portfolio"
+    "name": "jhonny-portfolio"
   },
   "plugins": [
     "@sanity/base",

@@ -40,7 +40,7 @@ export default function Project({ data = {}, preview }) {
             <article>
               <Head>
                 <title>
-                  {project.title} | Alba Cirera
+                  {project.title} 
                 </title>
                 {project.coverImage && (
                   <meta

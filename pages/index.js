@@ -14,7 +14,7 @@ export default function Index({ allProjects, home, preview }) {
     <>
       <Layout footerTitle={home?.footerTitle} contactInfo={contactInfo} preview={preview}>
         <Head>
-          <title>{home?.title} - Sociòloga</title>
+          <title>{home?.title}</title>
         </Head>
           <Container>
             <Intro title={home?.title} subtitle={home?.subtitle} mainImage={home?.mainImage}
@@ -26,7 +26,7 @@ export default function Index({ allProjects, home, preview }) {
               </h3>
               <PostBody content={home?.section1Content} />
             </div>
-            {allProjects.length > 0 && <MoreStories title={home?.projectsTitle ?? "Proyectos"} stories={allProjects} />}
+            {allProjects.length > 0 && <MoreStories title={home?.projectsTitle ?? "Projects"} stories={allProjects} />}
           </Container>
 
       </Layout>

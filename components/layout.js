@@ -9,7 +9,7 @@ export default function Layout({ preview, children, footerTitle, contactInfo }) 
       <div className="min-h-screen">
         <Alert preview={preview} />
         <main className="max-w-5xl mx-auto">{children}</main>
-        <Footer title={`${footerTitle ?? "Alba Cirera - Sociòloga"}`} {...contactInfo} />
+        <Footer title={`${footerTitle ?? "Jhonny Sánchez - Software Engineer"}`} {...contactInfo} />
       </div>
     </>
   )
